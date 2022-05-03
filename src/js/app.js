@@ -1,7 +1,9 @@
-import orderbyprops from './orderbyprops';
-import destructuring from './destructuring';
-import Validator from './validator';
+import GameSavingLoader from './gameSavingLoader';
 
-window.validator = new Validator();
-window.orderbyprops = orderbyprops;
-window.destructuring = destructuring;
+
+
+GameSavingLoader.load().then((saving) => {
+    console.log(saving);
+  }, (error) => {
+    throw new Error(error);
+  });
